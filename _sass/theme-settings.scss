@@ -49,7 +49,4 @@ $body-font-family: "Montserrat"; // font for the majority of site content
 $body-font-style: sans-serif; // either serif or sans serif
 
 /* ===== LAYOUT ===== */
-// ONLY change these if you want to change the dimensions of the site's footer/content
-$site-footer-height: 92px; // the size of the site footer
-$site-footer-height-mobile: 80px; // footer size, but for mobile
 $site-max-width: 1232px; // maximum width of the site, keep 100% for full width, or 1000px for 1000 pixels wide
