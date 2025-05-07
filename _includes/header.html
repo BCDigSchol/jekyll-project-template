@@ -100,7 +100,7 @@
                         {% endif %}
                         </span>
                     {% if menu_item.submenu %}
-                        <div class="dropdown-content">
+                        <div class="dropdown-content mobile-dropdown-content">
                             {% for submenu_item in menu_item.submenu %}
                                 {% if submenu_item.link %}
                                 <a href="{{ site.baseurl }}/{{ submenu_item.link }}">
