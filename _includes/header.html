@@ -77,7 +77,24 @@
                 {{ site.title }}
             </a>
         </div>
-        <div class="mobile-nav-dropdown-button">
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const dropdownButton = document.querySelector('.mobile-nav-dropdown-button');
+                const dropdownContent = document.querySelector('.nav-dropdown-content');
+        
+                dropdownButton.addEventListener('click', function () {
+                    dropdownContent.classList.toggle('show');
+                });
+        
+                // Optional: Close the dropdown if clicked outside
+                document.addEventListener('click', function (event) {
+                    if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+                        dropdownContent.classList.remove('show');
+                    }
+                });
+            });
+        </script>
+        <div class="mobile-nav-dropdown-button" data-toggle="dropdown">
             <i class="fa-solid fa-bars"></i>
 
             <div class="nav-dropdown-content text-center flex flex-col justify-start items-center">
@@ -100,7 +117,7 @@
                         {% endif %}
                         </span>
                     {% if menu_item.submenu %}
-                        <div class="dropdown-content mobile-dropdown-content">
+                        <div class="dropdown-content">
                             {% for submenu_item in menu_item.submenu %}
                                 {% if submenu_item.link %}
                                 <a href="{{ site.baseurl }}/{{ submenu_item.link }}">
